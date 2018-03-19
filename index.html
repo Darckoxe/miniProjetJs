@@ -8,9 +8,10 @@
   <body>
     <h1>Recherche de photos de ville</h1>
     <form method="post">
-      <input type="text" name="nomCommune" placeholder="Nom de la commune">
-      <input type="number" min="1" max="50" name="nbPhotos" value="5">
-      <button type="button" name="envoyer">Recherche</button>
+      <input id="nomCommune" type="text" name="nomCommune" placeholder="Nom de la commune">
+      <input id="nbPhotos" type="number" min="1" max="500" name="nbPhotos" value="50">
+      <button id="recherche" type="button" name="envoyer">Recherche</button>
     </form>
+    <script src="flickr/flickr.js" charset="utf-8"></script>
   </body>
 </html>
