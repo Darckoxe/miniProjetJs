@@ -3,7 +3,7 @@ $(function (){
   $("#nomCommune").autocomplete({
     source : function(requete, reponse) {
       $.ajax({
-        url : '/miniProjetJs/sql/commune.php',
+        url : 'sql/commune.php',
         type : 'GET',
         dataType : 'json',
         data : "commune=" + $("#nomCommune").val() + "&" +"maxRows=10",

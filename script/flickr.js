@@ -7,7 +7,7 @@ $(function() {
 
   $('#recherche').click(function() {
     var res = rechercheJSONFlickr($('#nomCommune').val(), $('#nbPhotos').val());
-    console.log(res.photos);
+    console.log(res);
   })
 
 })
