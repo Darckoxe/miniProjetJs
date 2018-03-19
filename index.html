@@ -3,14 +3,17 @@
   <head>
     <meta charset="utf-8">
     <script src="script/jquery.js" charset="utf-8"></script>
+    <script src="script/main.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
     <title>Outil de recherche d'images de villes</title>
   </head>
   <body>
     <h1>Recherche de photos de ville</h1>
     <form method="post">
-      <input type="text" name="nomCommune" value="nomCommune">
-      <input type="number" min="0" max="50" name="nbPhotos" value="nbPhotos">
-      <button type="button" name="envoyer">Recherche</button>
+      <input type="text" id="nomCommune" placeholder="Nantes">
+      <input type="number" min="0" max="50" name="nbPhotos" value="">
+      <button type="button" name="envoyer">Voir les photos</button>
     </form>
   </body>
 </html>
