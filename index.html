@@ -11,10 +11,11 @@
   </head>
   <body>
     <h1>Recherche de photos de ville</h1>
-    <form method="post">
-      <input type="text" id="nomCommune" placeholder="Nantes">
-      <input type="number" id="nbPhotos" min="0" max="50" name="nbPhotos" value="">
-      <button type="button" id="recherche" name="envoyer">Voir les photos</button>
+    <form method="post" id="formRecherche">
+      <input type="text" id="nomCommune" placeholder="Ville">
+      <input type="number" id="nbPhotos" min="0" max="500" name="nbPhotos" value="50">
+      <input type="submit" value="Rechercher">
     </form>
+    <div class="resultats" id="resultats"></div>
   </body>
 </html>
