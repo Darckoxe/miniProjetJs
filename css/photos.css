@@ -43,3 +43,21 @@
   display: block;
   margin: auto;
 }
+
+.nomImage {
+  font-size: 38px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0px;
+}
+
+.dateImage {
+  color: white;
+  margin-top: 0px;
+  font-size: 16px;
+}
+
+.auteurImage {
+  color: white;
+  font-size: 22px;
+}
