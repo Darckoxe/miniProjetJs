@@ -23,8 +23,7 @@ $(function() {
       success: function(data) {
         $('#resultats').empty();
         data.photos.photo.forEach(function(index) {
-          // $('#resultats').append('<img src="https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg" alt="Photo" onclick="openModalImage();" class="">');
-          $('#resultats').append('<div style="background-image:url(\'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\');cursor:pointer;" onclick="openModalImage();" class="imageGalerie"></div>');
+          $('#resultats').append('<div style="background-image:url(\'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\');cursor:pointer;" onclick="openModalImage(\'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\');" class="imageGalerie"></div>');
         });
       },
       error:function () {
