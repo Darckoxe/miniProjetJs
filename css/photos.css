@@ -1,0 +1,14 @@
+.imageGalerie {
+  height: 250px;
+  width: 250px;
+  display: inline-block;
+  background-position: center;
+  background-size: cover;
+  margin: 10px;
+}
+
+.resultats {
+  display: block;
+  margin: auto;
+  width: 80%;
+}
