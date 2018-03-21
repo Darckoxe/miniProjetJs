@@ -10,5 +10,36 @@
 .resultats {
   display: block;
   margin: auto;
-  width: 80%;
+  width: 100%;
+  text-align: center;
+}
+
+.fondModal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 0.8);
+  text-align: center;
+  display: none;
+  padding-top: 100px;
+  cursor: pointer;
+}
+
+.close {
+  font-size: 30px;
+  color: white;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.imageModale {
+  max-width: 80%;
+  max-height: 60%;
+  display: block;
+  margin: auto;
 }

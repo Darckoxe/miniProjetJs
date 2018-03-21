@@ -18,3 +18,12 @@ $(function (){
     }
   });
 });
+
+function openModalImage(url) {
+  $('#fondModal').show();
+  $('#imageModale').attr('src', url);
+}
+
+$('#fondModal').click(function() {
+  $('#fondModal').hide();
+})
