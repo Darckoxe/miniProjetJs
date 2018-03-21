@@ -7,11 +7,6 @@ $(function() {
 
   $('#formRecherche').submit(function(event) {
     event.preventDefault();
-    // var res = rechercheJSONFlickr($('#nomCommune').val(), $('#nbPhotos').val());
-    //
-    // // console.log(res.responseText.photos.photo[0]);
-    // console.log(res.responseJSON.photos.photo[0]);
-    // console.log(res);
 
     $.ajax({
       type: 'GET',
@@ -26,13 +21,14 @@ $(function() {
       },
       dataType: 'json',
       success: function(data) {
-        console.log(data.photos.photo[0]);
+        data.photos.photo.forEach(function(index) {
+          $('#resultats').append('<img src="https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg" alt="Photo">');
+        });
       },
       error:function () {
         console.error("Erreur ajax");
       }
     });
-    // $.ajax.done()
   })
 
 })
