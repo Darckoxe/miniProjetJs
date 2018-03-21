@@ -5,10 +5,19 @@
   background-position: center;
   background-size: cover;
   margin: 10px;
+  border: blue 2px solid;
 }
 
 .resultats {
   display: block;
   margin: auto;
   width: 80%;
+  text-align: center;
+  border: red solid 1px;
+}
+
+form{
+  text-align: center;
+  margin: 0 auto;
+  border: solid green 1px;
 }

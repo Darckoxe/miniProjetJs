@@ -1,0 +1,33 @@
+{
+   "photos":{
+      "page":1,
+      "pages":155072,
+      "perpage":2,
+      "total":"310143",
+      "photo":[
+         {
+            "id":"40007150535",
+            "owner":"95447664@N04",
+            "secret":"516725250a",
+            "server":"811",
+            "farm":1,
+            "title":"XTRM Tour : Di-Meh, Makala, Slimka",
+            "ispublic":1,
+            "isfriend":0,
+            "isfamily":0
+         },
+         {
+            "id":"40007150145",
+            "owner":"95447664@N04",
+            "secret":"7ebbbfd1bc",
+            "server":"820",
+            "farm":1,
+            "title":"XTRM Tour : Di-Meh, Makala, Slimka",
+            "ispublic":1,
+            "isfriend":0,
+            "isfamily":0
+         }
+      ]
+   },
+   "stat":"ok"
+}

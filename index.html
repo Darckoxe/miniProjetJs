@@ -11,10 +11,9 @@
     <title>Outil de recherche d'images de villes</title>
   </head>
   <body>
-    <h1>Recherche de photos de ville</h1>
     <form method="post" id="formRecherche">
-      <input type="text" id="nomCommune" placeholder="Ville">
-      <input type="number" id="nbPhotos" min="0" max="500" name="nbPhotos" value="50">
+      <label> Ville </label> <input type="text" id="nomCommune" placeholder="Ville">
+      <label> Nombre de photos </label> <input type="number" id="nbPhotos" min="0" max="500" name="nbPhotos" value="50">
       <input type="submit" value="Rechercher">
     </form>
     <div class="resultats" id="resultats"></div>
