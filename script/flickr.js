@@ -21,9 +21,9 @@ $(function() {
       },
       dataType: 'json',
       success: function(data) {
-        $('#tabs-1').empty();
+        $('#tabs-1 #resultats').empty();
         data.photos.photo.forEach(function(index) {
-          $('#tabs-1').append('<div style="background-image:url(\'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\');cursor:pointer;" onclick="openModalImage(\'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\', \''+index.owner+'\', \''+index.title+'\', \''+index.id+'\');" class="imageGalerie"></div><br><br>');
+          $('#tabs-1 #resultats').append('<div style="background-image:url(\'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\');cursor:pointer;" onclick="openModalImage(\'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\', \''+index.owner+'\', \''+index.title+'\', \''+index.id+'\');" class="imageGalerie"></div><br><br>');
         });
       },
       error: function () {
