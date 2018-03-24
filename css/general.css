@@ -4,6 +4,11 @@
   font-family: 'Lato', sans-serif;
 }
 
+p{
+  font-size: medium;
+  color : white;
+}
+
 #resultats{
   width: 50%;
   margin: 0 auto;
