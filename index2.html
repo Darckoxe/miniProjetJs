@@ -6,6 +6,7 @@
 
   <title>Mini projet javascript</title>
 
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="css/general.css">
   <link rel="stylesheet" href="css/photos.css">
@@ -18,17 +19,21 @@
 </head>
 <body>
 
-  <form method="post" id="formRecherche">
-    <input type="text" id="nomCommune" placeholder="Ville" title="Entrez le nom de la commune dont vous souhaitez afficher les photos">
-    <input type="number" id="nbPhotos" min="0" max="500" placeholder="10" title="Indiquez le nombre de photos à afficher (500 max)">
-    <input type="submit" value="Rechercher">
-  </form>
+
 
 <div id="tabs">
   <ul>
     <li><a href="#tabs-1">Liste de photos</a></li>
     <li><a href="#tabs-2">Tableau de photos</a></li>
+    <li id="form">
+      <form method="post" id="formRecherche">
+        <input type="text" id="nomCommune" placeholder="Ville" title="Entrez le nom de la commune dont vous souhaitez afficher les photos">
+        <input type="number" id="nbPhotos" min="0" max="500" placeholder="10" title="Indiquez le nombre de photos à afficher (500 max)">
+        <input type="submit" value="Rechercher">
+      </form>
+    </li>
   </ul>
+
   <div id="tabs-1">
 
     <div id="resultats">

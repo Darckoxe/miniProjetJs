@@ -1,21 +1,21 @@
 .imageGalerie {
-  height: 300px;
-  width: 75%;
+  height: 250px;
+  width: auto;
   display: block;
   background-position: center;
   background-size: cover;
   text-align: center;
   margin: 0 auto;
-  /*border-radius: 10px;
+  border-radius: 5px;
   box-shadow:
-    5px 0 25px black, magenta à gauche
-    -5px 0 25px black;  cyan à droite */
+    5px 0 15px black,
+    -5px 0 15px black;
 }
 
 .imageGalerie:hover {
   box-shadow:
-    5px 0 25px white,/* magenta à gauche */
-    -5px 0 25px white; /* cyan à droite */
+    5px 0 15px white,/* magenta à gauche */
+    -5px 0 15px white; /* cyan à droite */
 }
 
 #fondModal {
