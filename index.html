@@ -2,28 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script src="script/jquery.js" charset="utf-8"></script>
-    <script src="script/main.js" charset="utf-8"></script>
-    <script src="script/flickr.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/photos.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="script/main.js" charset="utf-8"></script>
+    <script src="script/flickr.js" charset="utf-8"></script>
+
+
     <title>Outil de recherche d'images de villes</title>
   </head>
   <body>
-      <form method="post" id="formRecherche">
-       <input type="text" id="nomCommune" placeholder="Ville">
-        <label> Nombre de photos :</label> <input type="number" id="nbPhotos" min="0" max="500" name="nbPhotos" placeholder="Nombre de photos" size="50">
-        <input type="submit" value="Rechercher">
-      </form>
-      <div class="resultats" id="resultats"></div>
-      <div class="fondModal" id="fondModal" onclick="this.style.display='none'">
-        <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
-        <img id="imageModale" class="imageModale">
-        <p id="nomImage"></p>
-        <p id="dateImage"></p>
-        <p id="auteurImage"></p>
-      </div>
+
+    <form method="post" id="formRecherche">
+      <input type="text" id="nomCommune" placeholder="Ville" title="Entrez le nom de la commune dont vous souhaitez afficher les photos">
+      <input type="number" id="nbPhotos" min="0" max="500" placeholder="10" title="Indiquez le nombre de photos à afficher (500 max)">
+      <input type="submit" value="Rechercher">
+    </form>
+
+
+    <div class="resultats" id="resultats">
+      <!-- Photos des requetes vont ici -->
+    </div>
+
+    <div class="fondModal" id="fondModal" onclick="this.style.display='none'">
+      <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+      <img id="imageModale" class="imageModale">
+      <p class="nomImage" id="nomImage"></p>
+      <p class="dateImage" id="dateImage"></p>
+      <p class="auteurImage" id="auteurImage"></p>
+    </div>
   </body>
 </html>

@@ -21,12 +21,12 @@ $(function() {
       },
       dataType: 'json',
       success: function(data) {
-        $('#resultats').empty();
+        $('#tabs-1').empty();
         data.photos.photo.forEach(function(index) {
-          $('#resultats').append('<div style="background-image:url(\'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\');cursor:pointer;" onclick="openModalImage(\'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\');" class="imageGalerie"></div>');
+          $('#tabs-1').append('<div style="background-image:url(\'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\');cursor:pointer;" onclick="openModalImage(\'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\', \''+index.owner+'\', \''+index.title+'\', \''+index.id+'\');" class="imageGalerie"></div><br><br>');
         });
       },
-      error:function () {
+      error: function () {
         console.error("Erreur ajax");
       }
     });

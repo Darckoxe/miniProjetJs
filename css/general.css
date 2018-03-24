@@ -13,8 +13,33 @@ html {
 }
 
 form{
-  color: white;
   margin: 0 auto;
-  margin-top: 24%;
+  margin-bottom: 2%;
   text-align: center;
+}
+
+form input{
+  margin-left: 3px;
+  margin-right: 3px;
+  padding: 10px;
+}
+
+form input[type="submit"]{
+  color: white;
+  background-color: #ff6600;
+  border: solid #ff6600 1px;
+  padding: 10px;;
+}
+
+form input[type="submit"]:hover{
+  cursor: pointer;
+  color: white;
+  background-color: #b34700;
+  border: solid #b34700 1px;
+  padding: 10px;;
+}
+
+div#tabs{
+  width: 45%;
+  margin: 0 auto;
 }
