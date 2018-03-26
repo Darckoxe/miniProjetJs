@@ -10,7 +10,7 @@ $(function() {
 
     $.ajax({
       type: 'GET',
-      url: 'http://api.flickr.com/services/rest/',
+      url: 'https://api.flickr.com/services/rest/',
       data: {
         method : "flickr.photos.search",
         api_key : "e33c23d5049a7016254b86a01201e648",
