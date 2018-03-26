@@ -4,6 +4,10 @@
   font-family: 'Lato', sans-serif;
 }
 
+body{
+  text-align: center;
+}
+
 p{
   font-size: medium;
   color : white;
@@ -47,8 +51,7 @@ form input[type="submit"]:hover{
 }
 
 div#tabs{
-  width: 740px;
-  margin: 0 auto;
+  display: inline-block;
   background-color: rgba(0, 0, 0, 0);
   border: none;
 }
