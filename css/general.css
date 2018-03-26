@@ -5,7 +5,7 @@
 }
 
 body{
-  text-align: center;
+  /*text-align: center;*/
 }
 
 p{
@@ -40,23 +40,91 @@ form input{
 form input[type="submit"]{
   color: white;
   background-color: #ff6600;
-  border: solid #ff6600 1px;
+  border: solid #ffffff 1px;
+  border-radius: 3px;
 }
 
 form input[type="submit"]:hover{
   cursor: pointer;
   color: white;
   background-color: #b34700;
-  border: solid #b34700 1px;
+  border: solid #fff 1px;
+}
+
+button{
+  color: white;
+  background-color: #ff6600;
+  border: solid #ffffff 1px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+button:hover{
+  cursor: pointer;
+  color: white;
+  background-color: #b34700;
+  border: solid #fff 1px;
 }
 
 div#tabs{
-  display: inline-block;
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
 }
 
 div#tabs-1, div#tabs-2{
   width: 100%;
   background-color: rgba(0, 0, 0, 0);
+}
+
+.resultats {
+  padding-top: 70px;
+}
+
+.barreRechercheFixed {
+  position: fixed;
+  display: block;
+  border: none;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  width: 600px;
+  top: 50%;
+  margin-top: -20px;
+  left: 50%;
+  margin-left: -300px;
+  text-align: center;
+}
+
+.barreRechercheFixed * {
+  font-size: 18px;
+  line-height: normal;
+  vertical-align: middle;
+}
+
+.barreRechercheFixed button {
+  display: none;
+}
+
+.barreRechercheNormal {
+  position: fixed;
+  display: block;
+  border: none;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  width: 800px;
+  top: 10px;
+  left: 50%;
+  margin-left: -400px;
+  text-align: center;
+}
+
+.barreRechercheNormal * {
+  font-size: 18px;
+  line-height: normal;
+  vertical-align: middle;
+}
+
+.barreRechercheNormal button {
+  display: inline-block;
+  /*position: fixed;
+  left: 20px;*/
 }

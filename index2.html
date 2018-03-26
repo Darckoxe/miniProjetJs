@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Mini projet javascript</title>
+  <title>Recherche de photos via Flickr</title>
 
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -21,38 +21,27 @@
 
 
 
-<div id="tabs">
-  <ul>
-    <li><a href="#tabs-1">Liste de photos</a></li>
-    <li><a href="#tabs-2">Tableau de photos</a></li>
-    <li id="form">
-      <form method="post" id="formRecherche">
-        <input type="text" id="nomCommune" placeholder="Ville" title="Entrez le nom de la commune dont vous souhaitez afficher les photos">
-        <input type="number" id="nbPhotos" min="0" max="500" placeholder="10" title="Indiquez le nombre de photos à afficher (500 max)">
-        <input type="submit" value="Rechercher">
-      </form>
-    </li>
-  </ul>
-
-  <div id="tabs-1">
-
-    <div id="resultats">
-      <!-- Photos des requetes vont ici -->
-    </div>
-
-    <div id="fondModal" onclick="this.style.display='none'">
-      <span id="close" onclick="this.parentElement.style.display='none'">&times;</span>
-      <img id="imageModale"> <br>
-      <p id="nomImage"></p> <br>
-      <p id="dateImage"></p> <br>
-      <p id="auteurImage"></p> <br>
-    </div>
-
+  <div id="barreRecherche" class="barreRechercheFixed">
+    <form method="post" id="formRecherche">
+      <button type="button" id="changeVue">Vue en liste</button>
+      <input type="text" id="nomCommune" placeholder="Ville" title="Entrez le nom de la commune dont vous souhaitez afficher les photos">
+      <input type="number" id="nbPhotos" min="0" max="500" value="50" title="Indiquez le nombre de photos à afficher (500 max)">
+      <input type="submit" value="Rechercher">
+    </form>
   </div>
-  <div id="tabs-2">
 
+  <div id="resultats" class="resultats">
+    <!-- Photos des requetes vont ici -->
   </div>
-</div>
+
+  <div id="fondModal" onclick="this.style.display='none'">
+    <span id="close" onclick="this.parentElement.style.display='none'">&times;</span>
+    <img id="imageModale"> <br>
+    <p id="nomImage"></p> <br>
+    <p id="dateImage"></p> <br>
+    <p id="auteurImage"></p> <br>
+  </div>
+
 
 </body>
 </html>
