@@ -13,8 +13,6 @@
 
   <script src="script/obligatoire/jquery.js"></script>
   <script src="script/obligatoire/jquery-ui.js"></script>
-  <script src="script/flickr.js"></script>
-  <script src="script/main.js"></script>
 
 </head>
 <body>
@@ -22,7 +20,7 @@
 
   <div id="barreRecherche" class="barreRechercheFixed">
     <form method="post" id="formRecherche">
-      <button type="button" id="changeVue">Vue en liste</button>
+      <button type="button" id="changeVue">Vue en table</button>
       <input type="text" id="nomCommune" placeholder="Ville" title="Entrez le nom de la commune dont vous souhaitez afficher les photos">
       <input type="number" id="nbPhotos" min="0" max="500" value="50" title="Indiquez le nombre de photos à afficher (500 max)">
       <input type="submit" value="Rechercher">
@@ -42,5 +40,7 @@
   </div>
 
 
+  <script src="script/flickr.js"></script>
+  <script src="script/main.js"></script>
 </body>
 </html>
