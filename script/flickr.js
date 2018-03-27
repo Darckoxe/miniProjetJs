@@ -1,5 +1,5 @@
 $(function() {
-  $("#progress").hide();
+  $("#progressBar").hide();
   $('#formRecherche').submit(function(event) {
     event.preventDefault();
     $('#resultats').empty();
@@ -30,7 +30,7 @@ $(function() {
 
 
           $('#resultats').hide();
-          $("#progress").show();
+          $("#progressBar").show();
 
           // Download progress
           xhr.onprogress = function(e){
@@ -40,7 +40,7 @@ $(function() {
 
           xhr.onload = function(e) {
             $('#resultats').show();
-            $("#progress").hide();
+            $("#progressBar").hide();
           }
 
           return xhr;
@@ -71,11 +71,11 @@ $(function() {
              tabIdPhotos.push(index.id);
              id++;
           });
-        }
-      },
+        },
       error: function () {
         console.error("Erreur ajax");
       }
+    });
     });
 
 
@@ -131,6 +131,4 @@ $(function() {
 
 
 
-  })
-
-})
+  });

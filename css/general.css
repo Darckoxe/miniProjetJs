@@ -118,20 +118,28 @@ div#tabs-1, div#tabs-2{
   display: inline-block;
 }
 
-.progress {
+.progressBar {
   position: fixed;
   top: 60%;
-  margin: auto;
   width: 250px;
-  vertical-align: middle;
   left: 50%;
   margin-left: -100px;
-  height: 50px;
-  line-height: 50px;
-  color: white;
   text-align: center;
 }
 
-.progress img {
+.progressBar img {
   height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.progressBar p {
+  color: white;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  display: inline-block;
+  height: auto;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
 }
