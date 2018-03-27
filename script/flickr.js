@@ -15,8 +15,8 @@ $(function() {
 
     while (id <= nb_photos) {
       $('#resultats').append('<div id="photo_vue_liste'+id+'" class="photo_vue_liste">');
-      $('#photo_vue_liste'+id).append('<div id="info'+id+'" class="info">');
       $('#photo_vue_liste'+id).append('<div id="photo'+id+'" class="photo">');
+      $('#photo_vue_liste'+id).append('<div id="info'+id+'" class="info">');
       id++;
     }
 
@@ -62,8 +62,6 @@ $(function() {
                'background-image' : 'url(https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg)',
                'background-position' : 'center',
                'background-size' : 'cover',
-               'height' : '300px',
-               'width' : '65%',
              });
              var url =  'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg';
              $('#photo'+id).attr('onclick','openModalImage("'+url+'",'+index.id+')');
@@ -84,9 +82,9 @@ $(function() {
                 var arrayString = data.photo.dates.taken.split(" ");
                 var arrayDate = arrayString[0].split("-");
                 var date = arrayDate[2]+"/"+arrayDate[1]+"/"+arrayDate[0] + " à " + arrayString[1];
-                $('#info'+id).append("<p>Titre : "+titre+"</p>");
-                $('#info'+id).append("<p>Photo prise le  : "+date+"</p>");
-                $('#info'+id).append("<p>Photo prise par : "+auteur+"</p>");
+                $('#info'+id).append("<p><img src=\"css/img/photo.png\" alt=\"Titre\" height=\"20\"> "+titre+"</p>");
+                $('#info'+id).append("<p><img src=\"css/img/horloge.png\" alt=\"Pris le\" height=\"16\"> "+date+"</p>");
+                $('#info'+id).append("<p><img src=\"css/img/personne.png\" alt=\"Pris par\" height=\"16\"> "+auteur+"</p>");
                 id++;
               },
               error : function () {

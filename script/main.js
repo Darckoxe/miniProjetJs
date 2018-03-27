@@ -42,9 +42,9 @@ function openModalImage(url,id) {
       var arrayString = data.photo.dates.taken.split(" ");
       var arrayDate = arrayString[0].split("-");
       var date = arrayDate[2]+"/"+arrayDate[1]+"/"+arrayDate[0] + " à " + arrayString[1];
-      $('#nomImage').html("Titre : "+titre);
-      $('#auteurImage').html("Photo prise par : "+auteur);
-      $('#dateImage').html("Photo prise le  : "+date);
+      $('#nomImage').html("<img src=\"css/img/photo.png\" alt=\"Titre\" height=\"20\"> "+titre);
+      $('#auteurImage').html("<img src=\"css/img/personne.png\" alt=\"Pris par\" height=\"16\"> "+auteur);
+      $('#dateImage').html("<img src=\"css/img/horloge.png\" alt=\"Pris le\" height=\"16\"> "+date);
     }
   });
 }
