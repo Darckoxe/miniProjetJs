@@ -61,13 +61,37 @@
 }
 
 .photo_vue_table {
-  display: table-row;
+  display: block;
+  width: 100%;
 }
 
 .photo_vue_table div {
-  display: table-cell;
+  display: inline-block;
+}
+
+.photo_vue_table .photo{
+  height: 200px;
+  width: 100%;
+  display: block;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+  margin-top: : 5%;
+  margin-bottom: 5%;
+  border-radius: 5px;
+  box-shadow:
+    5px 0 15px black,
+    -5px 0 15px black;
+}
+
+.photo_vue_table .photo:hover {
+  cursor: pointer;
+  box-shadow:
+    5px 0 15px white,
+    -5px 0 15px white;
 }
 
 .photo_vue_table .info {
   font-family: 'Lato', sans-serif;
+  display: inline-block;
 }
