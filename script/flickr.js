@@ -1,4 +1,5 @@
 $(function() {
+  $("#progressBar").hide();
   $('#formRecherche').submit(function(event) {
     event.preventDefault();
     $('#resultats').empty();
@@ -24,6 +25,26 @@ $(function() {
       $.ajax({
         type: 'GET',
         url: 'https://api.flickr.com/services/rest/',
+        xhr: function() {
+          var xhr = new window.XMLHttpRequest();
+
+
+          $('#resultats').hide();
+          $("#progressBar").show();
+
+          // Download progress
+          xhr.onprogress = function(e){
+            var percentComplete = Math.round((e.loaded / e.total) * 100);
+            console.log("PCT : "+percentComplete);
+          };
+
+          xhr.onload = function(e) {
+            $('#resultats').show();
+            $("#progressBar").hide();
+          }
+
+          return xhr;
+        },
         data: {
           method : "flickr.photos.search",
           api_key : "e33c23d5049a7016254b86a01201e648",
@@ -50,34 +71,12 @@ $(function() {
              tabIdPhotos.push(index.id);
              id++;
           });
-          id = 1;
-          for (var i = 0; i < tabIdPhotos.length; i++) {
-            $.ajax({
-              type: 'GET',
-              async : false,
-              url: "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=e33c23d5049a7016254b86a01201e648&photo_id="+tabIdPhotos[i]+"&format=json&nojsoncallback=1",
-              dataType: 'json',
-              success: function(data) {
-                var titre = data.photo.title._content;
-                var auteur = data.photo.owner.username;
-                var arrayString = data.photo.dates.taken.split(" ");
-                var arrayDate = arrayString[0].split("-");
-                var date = arrayDate[2]+"/"+arrayDate[1]+"/"+arrayDate[0] + " à " + arrayString[1];
-                $('#info'+id).append("<p>Titre : "+titre+"</p>");
-                $('#info'+id).append("<p>Photo prise le  : "+date+"</p>");
-                $('#info'+id).append("<p>Photo prise par : "+auteur+"</p>");
-                id++;
-              },
-              error : function () {
-                console.log("erreur ajax 2");
-              }
-            });
-          }
         },
-        error: function () {
-          console.error("Erreur ajax");
-        }
-      });
+      error: function () {
+        console.error("Erreur ajax");
+      }
+    });
+    });
 
 
 
@@ -132,6 +131,4 @@ $(function() {
 
 
 
-  })
-
-})
+  });
