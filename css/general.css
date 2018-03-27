@@ -117,3 +117,19 @@ div#tabs-1, div#tabs-2{
 .barreRechercheNormal button {
   display: inline-block;
 }
+
+.progress {
+  position: fixed;
+  top: 60%;
+  margin: auto;
+  width: 200px;
+  vertical-align: middle;
+  left: 50%;
+  margin-left: -100px;
+  height: 50px;
+  color: white;
+}
+
+.progress img {
+  height: 50px;
+}
