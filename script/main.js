@@ -29,25 +29,47 @@ $(function (){
 
 });
 
-function openModalImage(url, owner, title, id) {
+function openModalImage(url,id) {
   $('#fondModal').show();
   $('#imageModale').attr('src', url);
-
   $.ajax({
     type: 'GET',
     url: "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=e33c23d5049a7016254b86a01201e648&photo_id="+id+"&format=json&nojsoncallback=1",
     dataType: 'json',
     success: function(data) {
-      console.log(data);
+      var titre = data.photo.title._content;
+      var auteur = data.photo.owner.username;
       var arrayString = data.photo.dates.taken.split(" ");
       var arrayDate = arrayString[0].split("-");
       var date = arrayDate[2]+"/"+arrayDate[1]+"/"+arrayDate[0] + " à " + arrayString[1];
-      $('#nomImage').html("Titre : "+title);
-      $('#auteurImage').html("Photo prise par : "+data.photo.owner.realname);
+      $('#nomImage').html("Titre : "+titre);
+      $('#auteurImage').html("Photo prise par : "+auteur);
       $('#dateImage').html("Photo prise le  : "+date);
     }
   });
 }
+
+
+
+
+// function openModalImage(url, owner, title, id) {
+//   $('#fondModal').show();
+//   $('#imageModale').attr('src', url);
+//
+//   $.ajax({
+//     type: 'GET',
+//     url: "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=e33c23d5049a7016254b86a01201e648&photo_id="+id+"&format=json&nojsoncallback=1",
+//     dataType: 'json',
+//     success: function(data) {
+//       var arrayString = data.photo.dates.taken.split(" ");
+//       var arrayDate = arrayString[0].split("-");
+//       var date = arrayDate[2]+"/"+arrayDate[1]+"/"+arrayDate[0] + " à " + arrayString[1];
+//       $('#nomImage').html("Titre : "+title);
+//       $('#auteurImage').html("Photo prise par : "+data.photo.owner.realname);
+//       $('#dateImage').html("Photo prise le  : "+date);
+//     }
+//   });
+// }
 
 $("#changeVue").click(function() {
   if ($("#changeVue").html() == "Vue en table") {

@@ -22,75 +22,54 @@ $(function() {
 
     id = 1;
 
-    $.ajax({
-      type: 'GET',
-      url: 'https://api.flickr.com/services/rest/',
-      xhr: function() {
-        var xhr = new window.XMLHttpRequest();
+      $.ajax({
+        type: 'GET',
+        url: 'https://api.flickr.com/services/rest/',
+        xhr: function() {
+          var xhr = new window.XMLHttpRequest();
 
 
-        $('#resultats').hide();
-        $("#progress").show();
+          $('#resultats').hide();
+          $("#progress").show();
 
-        // Download progress
-        xhr.onprogress = function(e){
-          var percentComplete = Math.round((e.loaded / e.total) * 100);
-          console.log("PCT : "+percentComplete);
-        };
+          // Download progress
+          xhr.onprogress = function(e){
+            var percentComplete = Math.round((e.loaded / e.total) * 100);
+            console.log("PCT : "+percentComplete);
+          };
 
-        xhr.onload = function(e) {
-          $('#resultats').show();
-          $("#progress").hide();
-        }
+          xhr.onload = function(e) {
+            $('#resultats').show();
+            $("#progress").hide();
+          }
 
-        return xhr;
-      },
-      data: {
-        method : "flickr.photos.search",
-        api_key : "e33c23d5049a7016254b86a01201e648",
-        tags : $('#nomCommune').val(),
-        per_page : nb_photos,
-        format : "json",
-        nojsoncallback : 1
-      },
-      dataType: 'json',
+          return xhr;
+        },
+        data: {
+          method : "flickr.photos.search",
+          api_key : "e33c23d5049a7016254b86a01201e648",
+          tags : $('#nomCommune').val(),
+          per_page : nb_photos,
+          format : "json",
+          nojsoncallback : 1
+        },
+        dataType: 'json',
 
-      success: function(data) {
-        $('#barreRecherche').switchClass("barreRechercheFixed","barreRechercheNormal", 500);
-        data.photos.photo.forEach(function(index){
-          $('#photo'+id).css({
-            'background-image' : 'url(https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg)',
-            'background-position' : 'center',
-            'background-size' : 'cover',
-            'height' : '300px',
-            'width' : '65%',
-            'cursor' : 'pointer'
-          });
-          tabIdPhotos.push(index.id);
-          // $('#photo'+id).click(openModalImage('https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\', \''+index.owner+'\', \''+index.title+'\', \''+index.id));
-          id++;
-        });
-        id = 1;
-        for (var i = 0; i < tabIdPhotos.length; i++) {
-          $.ajax({
-            type: 'GET',
-            async : false,
-            url: "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=e33c23d5049a7016254b86a01201e648&photo_id="+tabIdPhotos[i]+"&format=json&nojsoncallback=1",
-            dataType: 'json',
-            success: function(data) {
-              var titre = data.photo.title._content;
-              var auteur = data.photo.owner.username;
-              var arrayString = data.photo.dates.taken.split(" ");
-              var arrayDate = arrayString[0].split("-");
-              var date = arrayDate[2]+"/"+arrayDate[1]+"/"+arrayDate[0] + " à " + arrayString[1];
-              $('#info'+id).append("<p>Titre : "+titre+"</p>");
-              $('#info'+id).append("<p>Photo prise le  : "+date+"</p>");
-              $('#info'+id).append("<p>Photo prise par : "+auteur+"</p>");
-              id++;
-            },
-            error : function () {
-              console.log("erreur ajax 2");
-            }
+        success: function(data) {
+          $('#barreRecherche').switchClass("barreRechercheFixed","barreRechercheNormal", 500);
+          data.photos.photo.forEach(function(index){
+             $('#photo'+id).css({
+               'background-image' : 'url(https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg)',
+               'background-position' : 'center',
+               'background-size' : 'cover',
+               'height' : '300px',
+               'width' : '65%',
+             });
+             var url =  'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg';
+             $('#photo'+id).attr('onclick','openModalImage("'+url+'",'+index.id+')');
+
+             tabIdPhotos.push(index.id);
+             id++;
           });
         }
       },
