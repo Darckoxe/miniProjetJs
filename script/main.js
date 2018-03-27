@@ -47,3 +47,19 @@ function openModalImage(url, owner, title, id) {
     }
   });
 }
+
+$("#changeVue").click(function() {
+  if ($("#changeVue").html() == "Vue en table") {
+    $("#changeVue").html("Vue en photos");
+    $("#resultats .photo_vue_liste").each(function(index) {
+      $(this).switchClass("photo_vue_liste", "photo_vue_table");
+    });
+  } else if ($("#changeVue").html() == "Vue en photos") {
+    $("#changeVue").html("Vue en table");
+    $("#resultats .photo_vue_table").each(function(index) {
+      $(this).switchClass("photo_vue_table", "photo_vue_liste");
+    });
+  } else {
+    $("#changeVue").html("Erreur !");
+  }
+});

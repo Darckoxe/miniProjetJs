@@ -57,3 +57,24 @@
 #nomImage {
   font-weight: bold;
 }
+<<<<<<< HEAD
+=======
+
+.photo{
+  width: 100%;
+  height: 200px;
+}
+
+
+.photo_vue_table {
+  display: table-row;
+}
+
+.photo_vue_table div {
+  display: table-cell;
+}
+
+.photo_vue_table .info {
+  font-family: 'Lato', sans-serif;
+}
+>>>>>>> 6a033e2c4eb47806e97dde43cf52df0a32997ec9

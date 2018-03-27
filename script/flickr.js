@@ -47,6 +47,7 @@ $(function() {
              tabIdPhotos.push(index.id);
              id++;
           });
+          id = 1;
           for (var i = 0; i < tabIdPhotos.length; i++) {
             $.ajax({
               type: 'GET',
@@ -59,9 +60,10 @@ $(function() {
                 var arrayString = data.photo.dates.taken.split(" ");
                 var arrayDate = arrayString[0].split("-");
                 var date = arrayDate[2]+"/"+arrayDate[1]+"/"+arrayDate[0] + " à " + arrayString[1];
-                $('#info'+tabIdPhotos[i]).append("<p>Photo prise le  : "+date+"</p>");
-                $('#info'+tabIdPhotos[i]).append("<p>Titre : "+titre+"</p>");
-                $('#info'+tabIdPhotos[i]).append("<p>Photo prise par : "+auteur+"</p>");
+                $('#info'+id).append("<p>Titre : "+titre+"</p>");
+                $('#info'+id).append("<p>Photo prise le  : "+date+"</p>");
+                $('#info'+id).append("<p>Photo prise par : "+auteur+"</p>");
+                id++;
               },
               error : function () {
                 console.log("erreur ajax 2");
