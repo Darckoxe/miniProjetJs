@@ -4,18 +4,9 @@
   font-family: 'Lato', sans-serif;
 }
 
-body{
-  /*text-align: center;*/
-}
-
 p{
   font-size: medium;
   color : white;
-}
-
-#resultats{
-  width: 50%;
-  margin: 0 auto;
 }
 
 html {
@@ -125,6 +116,4 @@ div#tabs-1, div#tabs-2{
 
 .barreRechercheNormal button {
   display: inline-block;
-  /*position: fixed;
-  left: 20px;*/
 }

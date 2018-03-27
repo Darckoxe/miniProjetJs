@@ -1,38 +1,46 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/photos.css">
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="script/main.js" charset="utf-8"></script>
-    <script src="script/flickr.js" charset="utf-8"></script>
+  <title>Recherche de photos via Flickr</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/photos.css">
+
+  <script src="script/obligatoire/jquery.js"></script>
+  <script src="script/obligatoire/jquery-ui.js"></script>
+  <script src="script/flickr.js"></script>
+  <script src="script/main.js"></script>
+
+</head>
+<body>
 
 
-    <title>Outil de recherche d'images de villes</title>
-  </head>
-  <body>
-
+  <div id="barreRecherche" class="barreRechercheFixed">
     <form method="post" id="formRecherche">
+      <button type="button" id="changeVue">Vue en liste</button>
       <input type="text" id="nomCommune" placeholder="Ville" title="Entrez le nom de la commune dont vous souhaitez afficher les photos">
-      <input type="number" id="nbPhotos" min="0" max="500" placeholder="10" title="Indiquez le nombre de photos à afficher (500 max)">
+      <input type="number" id="nbPhotos" min="0" max="10" value="10" title="Indiquez le nombre de photos à afficher (10 max)">
       <input type="submit" value="Rechercher">
     </form>
+  </div>
+
+  <div id="resultats" class="resultats">
+    <!-- Photos des requetes vont ici -->
+  </div>
+
+  <div id="fondModal" onclick="this.style.display='none'">
+    <span id="close" onclick="this.parentElement.style.display='none'">&times;</span>
+    <img id="imageModale"> <br>
+    <p id="nomImage"></p> <br>
+    <p id="dateImage"></p> <br>
+    <p id="auteurImage"></p> <br>
+  </div>
 
 
-    <div class="resultats" id="resultats">
-      <!-- Photos des requetes vont ici -->
-    </div>
-
-    <div class="fondModal" id="fondModal" onclick="this.style.display='none'">
-      <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
-      <img id="imageModale" class="imageModale">
-      <p class="nomImage" id="nomImage"></p>
-      <p class="dateImage" id="dateImage"></p>
-      <p class="auteurImage" id="auteurImage"></p>
-    </div>
-  </body>
+</body>
 </html>

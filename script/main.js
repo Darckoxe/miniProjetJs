@@ -38,7 +38,6 @@ function openModalImage(url, owner, title, id) {
     url: "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=e33c23d5049a7016254b86a01201e648&photo_id="+id+"&format=json&nojsoncallback=1",
     dataType: 'json',
     success: function(data) {
-      console.log(data);
       var arrayString = data.photo.dates.taken.split(" ");
       var arrayDate = arrayString[0].split("-");
       var date = arrayDate[2]+"/"+arrayDate[1]+"/"+arrayDate[0] + " à " + arrayString[1];
