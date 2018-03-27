@@ -44,6 +44,9 @@ $(function() {
                'height' : '300px',
                'width' : '65%',
              });
+             var url =  'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg';
+             $('#photo'+id).attr('onclick','openModalImage("'+url+'",'+index.id+')');
+
              tabIdPhotos.push(index.id);
              id++;
           });
