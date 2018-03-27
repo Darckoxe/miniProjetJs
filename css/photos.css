@@ -72,10 +72,13 @@
   display: block;
   width: 100%;
   text-align: center;
+  line-height: 200px;
+  margin-bottom: 60px;
 }
 
 .photo_vue_table div {
   display: inline-block;
+  line-height: normal;
 }
 
 .photo_vue_table .photo{
@@ -86,8 +89,6 @@
   vertical-align: middle;
   background-size: cover;
   margin: 0 auto;
-  margin-top: : 5%;
-  margin-bottom: 5%;
   border-radius: 5px;
   box-shadow:
     5px 0 15px black,
@@ -107,16 +108,17 @@
   padding-left: 10px;
   text-align: left;
   width: 40%;
+  vertical-align: middle;
 }
 
 .photo_vue_table .info p:first-child {
   font-size: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .photo_vue_table .info p:nth-child(2) {
   font-size: 16px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .photo_vue_table .info p:last-child {
