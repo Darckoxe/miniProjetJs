@@ -2,6 +2,7 @@ $(function() {
   $("#progressBar").hide();
   $('#formRecherche').submit(function(event) {
     event.preventDefault();
+
     $('#resultats').empty();
     // var nb_photos = $('#nbPhotos').val();
 
@@ -41,6 +42,8 @@ $(function() {
           xhr.onload = function(e) {
             $('#resultats').show();
             $("#progressBar").hide();
+            $('#mainTitre').hide();
+            $('#mainAuteurs').hide();
           }
 
           return xhr;

@@ -11,7 +11,6 @@ p{
 html {
   margin:0;
   padding:0;
-  /*background: url(img/coucher_soleil_flou.jpg) no-repeat center fixed;*/
   background-color: #EAEAEA;
   -webkit-background-size: cover; /* pour anciens Chrome et Safari */
   background-size: cover; /* version standardisée */
@@ -152,21 +151,19 @@ div#tabs-1, div#tabs-2{
 }
 
 #mainTitre {
-  position: fixed;
-  top: 150px;
+  position: absolute;
+  top: -80px;
   font-size: 40px;
   font-family: 'Lato', sans-serif;
   color: #004181;
-  text-align: center;
-  margin: auto;
+  text-align: left;
 }
 
 #mainAuteurs {
-  position: fixed;
-  top: 200px;
+  position: absolute;
+  top: -30px;
   font-size: 20px;
   font-family: 'Lato', sans-serif;
   color: #004181;
-  text-align: center;
-  margin: auto;
+  text-align: left;
 }

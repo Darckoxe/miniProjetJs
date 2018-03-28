@@ -26,7 +26,6 @@ $(function (){
   $('#fondModal').click(function() {
     $('#fondModal').hide();
   })
-
 });
 
 function openModalImage(url,id) {
@@ -42,34 +41,12 @@ function openModalImage(url,id) {
       var arrayString = data.photo.dates.taken.split(" ");
       var arrayDate = arrayString[0].split("-");
       var date = arrayDate[2]+"/"+arrayDate[1]+"/"+arrayDate[0] + " à " + arrayString[1];
-      $('#nomImage').html("<img src=\"css/img/photo.png\" alt=\"Titre\" height=\"20\"> "+titre);
-      $('#auteurImage').html("<img src=\"css/img/personne.png\" alt=\"Pris par\" height=\"16\"> "+auteur);
-      $('#dateImage').html("<img src=\"css/img/horloge.png\" alt=\"Pris le\" height=\"16\"> "+date);
+      $('#nomImage').html("<img src=\"css/img/photo_white.png\" alt=\"Titre\" height=\"20\"> "+titre);
+      $('#auteurImage').html("<img src=\"css/img/personne_white.png\" alt=\"Pris par\" height=\"16\"> "+auteur);
+      $('#dateImage').html("<img src=\"css/img/horloge_white.png\" alt=\"Pris le\" height=\"16\"> "+date);
     }
   });
 }
-
-
-
-
-// function openModalImage(url, owner, title, id) {
-//   $('#fondModal').show();
-//   $('#imageModale').attr('src', url);
-//
-//   $.ajax({
-//     type: 'GET',
-//     url: "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=e33c23d5049a7016254b86a01201e648&photo_id="+id+"&format=json&nojsoncallback=1",
-//     dataType: 'json',
-//     success: function(data) {
-//       var arrayString = data.photo.dates.taken.split(" ");
-//       var arrayDate = arrayString[0].split("-");
-//       var date = arrayDate[2]+"/"+arrayDate[1]+"/"+arrayDate[0] + " à " + arrayString[1];
-//       $('#nomImage').html("Titre : "+title);
-//       $('#auteurImage').html("Photo prise par : "+data.photo.owner.realname);
-//       $('#dateImage').html("Photo prise le  : "+date);
-//     }
-//   });
-// }
 
 $("#changeVue").click(function() {
   if ($("#changeVue").html() == "Vue en table") {
