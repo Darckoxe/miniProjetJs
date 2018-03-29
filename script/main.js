@@ -1,11 +1,18 @@
 $(function (){
   console.log("READY");
+  /*
+  Infobulle lorsqu'on passe la souris sur le formulaire
+  */
   $(document).tooltip({
     show: { effect: "blind", duration: 500 },
     hide: { effect: "blind", duration: 500 }
   });
-  $("#tabs").tabs();
 
+  /*
+  Autocomplétion des noms de commune. On récupère la valeur du champ de recherche par
+  l'utilisateur et on retourne les 10 premieres ville de la base de données selon
+  la lettre correspondante.
+  */
   $("#nomCommune").autocomplete({
     source : function(requete, reponse) {
       $.ajax({
@@ -28,6 +35,11 @@ $(function (){
   })
 });
 
+/*
+  Cette fonction est lancée lorsque l'utilisateur clique sur une photo.
+  On récupère les informations propre à la photo avec flickr puis on l'affiche dans la
+  fenetre modale.
+*/
 function openModalImage(url,id) {
   $('#fondModal').show();
   $('#imageModale').attr('src', url);
@@ -48,6 +60,10 @@ function openModalImage(url,id) {
   });
 }
 
+/*
+Cette fonction permet de changer la disposition des photos en la mettant en vue photo ou tableau.
+Selon le choix de l'utilisateur, les classes des éléments change pour s'adapterà la disposition souhaité.
+*/
 $("#changeVue").click(function() {
   if ($("#changeVue").html() == "Vue en table") {
     $("#changeVue").html("Vue en photos");

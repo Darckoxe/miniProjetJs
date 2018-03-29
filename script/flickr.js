@@ -4,11 +4,12 @@ $(function() {
     event.preventDefault();
 
     $('#resultats').empty();
-    // var nb_photos = $('#nbPhotos').val();
 
-    // On regarde le nombre de photos voulus.
-    // On créé le nombre de div associé
-    // On rempli les divs avec les ids qui correspondent via la variable id
+    /*
+    On regarde le nombre de photos voulus.
+    On créé le nombre de div associé
+    On rempli les divs avec les ids qui correspondent a la variable id
+    */
 
     var nb_photos = $('#nbPhotos').val();
     var id = 1;
@@ -23,9 +24,18 @@ $(function() {
 
     id = 1;
 
+    /*
+    Cette requete AJAX effectue une demande a l'api pour recuperer sous un format JSON toutes les donnees
+    necessaires a l'affichage d'une photo
+    */
+
       $.ajax({
         type: 'GET',
         url: 'https://api.flickr.com/services/rest/',
+        /*
+        La requete ajax suivante est en mode synchrone.
+        On affiche un logo de chargement pour faire patienter l'utilisateur
+        */
         xhr: function() {
           var xhr = new window.XMLHttpRequest();
 
@@ -39,6 +49,11 @@ $(function() {
             console.log("PCT : "+percentComplete);
           };
 
+          /*
+          Lorsque la requête est terminé
+          on affiche les photos et on
+          cache le titre et les auteurs ainsi que le logo de chargement
+          */
           xhr.onload = function(e) {
             $('#resultats').show();
             $("#progressBar").hide();
@@ -57,7 +72,14 @@ $(function() {
           nojsoncallback : 1
         },
         dataType: 'json',
+        /*
+        Quand la requête est un succes on change l'apparence du formulaire de recherche
+        en changeant sa classe et on peuple nos div avec les photos en utilisant le JSON récupéré par
+        AJAX.
 
+        On stocke chaque id des photos récupérés car elles vont reservir pour afficher les informations des photos
+        (titre, date, auteur)
+        */
         success: function(data) {
           $('#barreRecherche').switchClass("barreRechercheFixed","barreRechercheNormal", 500);
           data.photos.photo.forEach(function(index){
@@ -74,6 +96,12 @@ $(function() {
           });
           id = 1;
           for (var i = 0; i < tabIdPhotos.length; i++) {
+            /*
+            On parcours notre tableau d'id photo pour peupler nos divs d'information via la JSON qui
+            est reourné. On est obligé de mettre la requête en mode synchrone du fait que la réponse du serveur
+            n'est pas instantané. Les informations peuvent alors être présentes mais pas pour la bonne photo.
+            Cela met forcemment du temps d'où le logo de chargement précédent.
+            */
             $.ajax({
               type: 'GET',
               async : false,
@@ -101,58 +129,4 @@ $(function() {
       }
     });
     });
-
-
-
-    // $.ajax({
-    //   type: 'GET',
-    //   url: 'https://api.flickr.com/services/rest/',
-    //   data: {
-    //     method : "flickr.photos.search",
-    //     api_key : "e33c23d5049a7016254b86a01201e648",
-    //     tags : $('#nomCommune').val(),
-    //     per_page : $('#nbPhotos').val(),
-    //     format : "json",
-    //     nojsoncallback : 1
-    //   },
-    //   dataType: 'json',
-    //   success: function(data) {
-    //     $('#resultats').empty();
-    //     var id = 1;
-    //
-    //     data.photos.photo.forEach(function(index) {
-    //       // console.log(index);
-    //       console.log(id);
-    //       $('#resultats').append('<div id="photo_vue_liste'+id+'" class="photo_vue_liste">');
-    //       $('#photo_vue_liste'+id).append('<div id="photo'+id+'" class="photo" style="background-image:url(\'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\');cursor:pointer;" onclick="openModalImage(\'https://farm'+index.farm+'.staticflickr.com/'+index.server+'/'+index.id+'_'+index.secret+'.jpg\', \''+index.owner+'\', \''+index.title+'\', \''+index.id+'\');">');
-    //       $('#photo_vue_liste'+id).append('<div style="" id="info'+id+'" class="info">');
-    //
-    //       $.ajax({
-    //         type: 'GET',
-    //         url: "https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=e33c23d5049a7016254b86a01201e648&photo_id="+index.id+"&format=json&nojsoncallback=1",
-    //         dataType: 'json',
-    //         success: function(data) {
-    //           var arrayString = data.photo.dates.taken.split(" ");
-    //           var arrayDate = arrayString[0].split("-");
-    //           var date = arrayDate[2]+"/"+arrayDate[1]+"/"+arrayDate[0] + " à " + arrayString[1];
-    //           $('#info'+id_info).append("<p>Titre : "+index.title+"</p>");
-    //           $('#info'+id_info).append("<p>Photo prise par : "+data.photo.owner.realname+"</p>");
-    //           $('#info'+id_info).append("<p>Photo prise le  : "+date+"</p>");
-    //           id_info++;
-    //         }
-    //       });
-    //
-    //       id++;
-    //     });
-    //     $('#barreRecherche').switchClass("barreRechercheFixed","barreRechercheNormal", 500);
-    //   },
-    //
-    //   error: function () {
-    //     console.error("Erreur ajax");
-    //   }
-    // });
-
-
-
-
   });
